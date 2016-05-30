@@ -1,5 +1,5 @@
 # PROMPT
-PROMPT="[%!][%F{green}%~%f]
+PROMPT="[%!][%F{blue}%~%f]
 (*´Д\`) ﾊｧﾊｧ > "
 #(*´Д`) ﾊｧﾊｧ
 

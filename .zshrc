@@ -4,6 +4,10 @@
 autoload -U compinit
 compinit -u
 
+# 色を使用できるようにする
+autoload -Uz colors
+colors
+
 # localな設定はlocal.zsから反映
 [ -f ~/.zsh/local.zsh ] && source ~/.zsh/local.zsh
 # promptな設定はprompt.zshから反映
@@ -11,9 +15,25 @@ compinit -u
 # auto-fuな設定はazfu.zshから反映
 [ -f ~/.zsh/azfu.zsh ] && source ~/.zsh/azfu.zsh
 
+case ${OSTYPE} in
+  darwin*)
+    #Mac用の設定
+    export CLICOLOR=1
+    alias ls='ls -G -F'
+    ;;
+  linux*)
+    #linux用の設定
+    alias ls='ls -F --color=auto'
+    ;;
+  cygwin*)
+    #cygwin用の設定
+    alias ls='ls -F --color=tty'
+    ;;
+esac
+
 # alias
-alias ls='ls -lah --color=tty'
-alias lh='\ls -lh --color=tty'
+alias ls='ls -lah'
+alias lh='\ls -lh'
 alias df='df -h'
 alias vi=vim
 alias viz='vi ~/.zshrc'
