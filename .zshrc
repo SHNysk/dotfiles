@@ -4,10 +4,6 @@
 autoload -U compinit
 compinit -u
 
-# 色を使用できるようにする
-autoload -Uz colors
-colors
-
 # localな設定はlocal.zsから反映
 [ -f ~/.zsh/local.zsh ] && source ~/.zsh/local.zsh
 # promptな設定はprompt.zshから反映
@@ -56,9 +52,6 @@ alias -g W='| wc'
 alias -g S='| sed'
 alias -g A='| awk'
 alias -g SU='| sort | uniq'
-
-# kayac
-alias -g kayac='&& curl -d "message=script end" "http://im.kayac.com/api/post/show_no"'
 
 # 256
 alias 256color='for c in {000..255}; do echo -n "\e[38;5;${c}m $c" ; [ $(($c%16)) -eq 15 ] && echo;done;echo'
