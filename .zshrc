@@ -15,21 +15,22 @@ case ${OSTYPE} in
   darwin*)
     #Mac用の設定
     export CLICOLOR=1
-    alias ls='ls -G -F'
+    alias ls='ls -G -Flah'
+    alias lh='\ls -lh --color=auto'
     ;;
   linux*)
     #linux用の設定
-    alias ls='ls -F --color=auto'
+    alias ls='ls -lahF --color=auto'
+    alias lh='\ls -lh --color=auto'
     ;;
   cygwin*)
     #cygwin用の設定
-    alias ls='ls -F --color=tty'
+    alias ls='ls -Flah --color=tty'
+    alias lh='\ls -lh --color=auto'
     ;;
 esac
 
 # alias
-alias ls='ls -lah'
-alias lh='\ls -lh'
 alias df='df -h'
 alias vi=vim
 alias viz='vi ~/.zshrc'
